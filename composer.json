@@ -15,7 +15,7 @@
         "pimple/pimple": "^3.0",
         "ext-json": "*",
         "symfony/psr-http-message-bridge": "^0.3 || ^1.0 || ^2.0",
-        "guzzlehttp/guzzle": "6.5.5",
+        "guzzlehttp/guzzle": "^7.3",
         "doctrine/cache": "1.10.*",
         "symfony/http-foundation": "v3.4.47"
     },
