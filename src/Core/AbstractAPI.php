@@ -19,6 +19,8 @@ abstract class AbstractAPI
      */
     protected $http;
 
+    protected $param = [];
+
     /**
      * The request token.
      *
@@ -122,6 +124,8 @@ abstract class AbstractAPI
     public function parseJSON($method, array $args)
     {
         $http = $this->getHttp();
+
+        $this->param = isset($args[1]) ? $args[1] : [];
 
         $contents = $http->parseJSON(call_user_func_array([$http, $method], $args));
 
@@ -229,5 +233,10 @@ abstract class AbstractAPI
 
             throw new HttpException($contents['message'], $contents['code']);
         }
+    }
+
+    public function getRequestParam()
+    {
+        return $this->param;
     }
 }

@@ -70,12 +70,12 @@ class Http
     /**
      * GET request.
      *
-     * @param string $url
-     * @param array $options
+     * @param  string  $url
+     * @param  array  $options
      *
      * @return ResponseInterface
      *
-     * @throws HttpException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get($url, array $options = [])
     {
@@ -85,12 +85,12 @@ class Http
     /**
      * POST request.
      *
-     * @param string $url
-     * @param array|string $options
+     * @param  string  $url
+     * @param  array|string  $options
      *
      * @return ResponseInterface
      *
-     * @throws HttpException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function post($url, $options = [])
     {
@@ -116,14 +116,14 @@ class Http
     /**
      * JSON request.
      *
-     * @param string $url
-     * @param string|array $options
-     * @param array $queries
-     * @param int $encodeOption
+     * @param  string  $url
+     * @param  string|array  $options
+     * @param  array  $queries
+     * @param  int  $encodeOption
      *
      * @return ResponseInterface
      *
-     * @throws HttpException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function json($url, $options = [], $encodeOption = JSON_UNESCAPED_UNICODE, $queries = [])
     {
@@ -135,13 +135,13 @@ class Http
     /**
      * Upload file.
      *
-     * @param string $url
-     * @param array $files
-     * @param array $form
-     *
+     * @param  string  $url
+     * @param  array  $files
+     * @param  array  $form
+     * @param  array  $queries
      * @return ResponseInterface
      *
-     * @throws HttpException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function upload($url, array $files = [], array $form = [], array $queries = [])
     {
@@ -216,12 +216,13 @@ class Http
     /**
      * Make a request.
      *
-     * @param string $url
-     * @param string $method
-     * @param array $options
+     * @param  string  $url
+     * @param  string  $method
+     * @param  array  $options
      *
      * @return ResponseInterface
      *
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function request($url, $method = 'GET', $options = [])
     {
