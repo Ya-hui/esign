@@ -27,7 +27,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @property \Achais\ESign\File\File $file
  * @property \Achais\ESign\SignFlow\SignFlow $signflow
  * @property PersonAuth $personAuth
- * @property OrganizationAuthProvider $organizationAuth
+ * @property OrganizationAuth $organizationAuth
  *
  * @package Achais\ESign
  */
