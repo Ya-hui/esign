@@ -10,14 +10,13 @@ use Achais\ESign\Core\Http;
 use Achais\ESign\Foundation\ServiceProviders\OrganizationAuthProvider;
 use Achais\ESign\Foundation\ServiceProviders\PersonAuthProvider;
 use Achais\ESign\Support\Log;
-use Doctrine\Common\Cache\FilesystemCache;
-use Doctrine\Common\Cache\Cache as CacheInterface;
 use Monolog\Handler\HandlerInterface;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Pimple\Container;
 use Symfony\Component\HttpFoundation\Request;
+use linkcache\Cache;
 
 /**
  * Class Application
@@ -129,11 +128,11 @@ class Application extends Container
             return Request::createFromGlobals();
         };
 
-        if (!empty($this['config']['cache']) && $this['config']['cache'] instanceof CacheInterface) {
+        if (!empty($this['config']['cache']) && $this['config']['cache'] instanceof Cache) {
             $this['cache'] = $this['config']['cache'];
         } else {
             $this['cache'] = function () {
-                return new FilesystemCache(sys_get_temp_dir());
+                return new Cache();
             };
         }
 

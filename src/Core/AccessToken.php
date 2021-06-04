@@ -3,8 +3,7 @@
 namespace Achais\ESign\Core;
 
 use Achais\ESign\Exceptions\HttpException;
-use Doctrine\Common\Cache\Cache;
-use Doctrine\Common\Cache\FilesystemCache;
+use linkcache\Cache;
 
 class AccessToken
 {
@@ -39,11 +38,11 @@ class AccessToken
     public function getToken($forceRefresh = false)
     {
         $cacheKey = $this->getCacheKey();
-        $cached = $this->getCache()->fetch($cacheKey);
+        $cached = $this->getCache()->get($cacheKey);
 
         if ($forceRefresh || empty($cached)) {
             $token = $this->getTokenFromServer();
-            $this->getCache()->save($cacheKey, $token['data'][$this->tokenJsonKey], 60 * 100);
+            $this->getCache()->set($cacheKey, $token['data'][$this->tokenJsonKey], 60 * 100);
             return $token['data'][$this->tokenJsonKey];
         }
 
@@ -85,7 +84,7 @@ class AccessToken
 
     protected function getCache()
     {
-        return $this->cache ?: $this->cache = new FilesystemCache(sys_get_temp_dir());
+        return $this->cache ?: $this->cache = new Cache();
     }
 
     public function getHttp()
