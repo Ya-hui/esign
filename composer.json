@@ -10,18 +10,12 @@
     ],
     "require": {
         "php":">=7.2",
-        "ext-openssl": "*",
-        "monolog/monolog": "^1.22 || ^2.0",
-        "pimple/pimple": "^3.0",
         "ext-json": "*",
-        "symfony/psr-http-message-bridge": "^0.3 || ^1.0 || ^2.0",
-        "guzzlehttp/guzzle": "^7.3",
-        "doctrine/cache": "1.10.2",
-        "symfony/http-foundation": "^4.0"
+        "guzzlehttp/guzzle": "^7.3"
     },
     "autoload": {
         "psr-4": {
-            "Achais\\ESign\\": "src"
+            "MrWang\\ESign\\": "src"
         }
     }
 }

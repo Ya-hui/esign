@@ -1,0 +1,4 @@
+2021-04-06 11:39:25  curl data:
+2021-04-06 11:39:25  {"url":"https:\/\/smlopenapi.esign.cn\/v2\/identity\/auth\/web\/indivAuthUrl","httpMethod":"POST","data":"{}","header":["X-Tsign-Open-App-Id:","X-Tsign-Open-Ca-Timestamp:1617709165094","Accept:*\/*","X-Tsign-Open-Ca-Signature:hWKu3ZWhJwkU4ekToBJLDDBO1ettMGKu11s7WkRmfXo=","Content-MD5:mZFLkyvTelC5g8XnyQrpOw==","Content-Type:application\/json; charset=UTF-8","X-Tsign-Open-Auth-Mode:Signature"]}
+2021-04-06 11:39:25  curl response:
+2021-04-06 11:39:25  {"success":false,"code":401,"message":"缺少参数"}
