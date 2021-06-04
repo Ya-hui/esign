@@ -16,7 +16,7 @@
         "ext-json": "*",
         "symfony/psr-http-message-bridge": "^0.3 || ^1.0 || ^2.0",
         "guzzlehttp/guzzle": "^7.3",
-        "doctrine/cache": "1.10.*",
+        "doctrine/cache": "1.10.2",
         "symfony/http-foundation": "^4.0"
     },
     "autoload": {
